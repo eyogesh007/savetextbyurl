@@ -1,7 +1,9 @@
 import axios from 'axios'
 import {useState} from 'react'
+import {useNavigate} from 'react-router';
 
 function Itext(){
+    let navigate=useNavigate();
     let taget=1;
     const [a,setA]=useState(true);
     const [text,setText] = useState(
@@ -33,15 +35,23 @@ function subtext(e){
     setText({...text,savedtext:e.target.value})
 }
 
+function gettext(){
+    navigate(`/${url}`);
+  }
+
 return (
     <div className="App">
+        <center>
         <label>url:</label>
       <input value={url} style ={{marginTop:'20px'}} onChange={e=>setUrl(e.target.value)} type='text' placeholder='enter url'></input>
       <br></br>
       {a?<p></p>:<p style={{color:"red"}}>link not available</p>}
-      <textarea value={savedtext} style={{margin:'20px'}} onChange={subtext} placeholder="enter text" rows="15" cols="90"></textarea>
+      <textarea value={savedtext}  onChange={subtext} style={{padding:'15px 10px',
+     height:'300px' ,width:'90%'}} placeholder="enter text" ></textarea>
       <br></br>
       <input type="button" style={{margin:'20px'}} onClick={submittext} value="SUBMIT"></input>
+      <input type="button" style={{margin:'20px'}} onClick={gettext} value="GET"></input>
+      </center>
     </div>
   );
 }
