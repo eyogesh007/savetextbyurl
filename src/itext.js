@@ -40,14 +40,14 @@ function gettext(){
   }
 
 return (
-    <div className="App">
+    <div style={{height:'110vh' ,backgroundColor:'antiquewhite'}} className="App">
         <center>
         <label>url:</label>
-      <input value={url} style ={{marginTop:'20px'}} onChange={e=>setUrl(e.target.value)} type='text' placeholder='enter url'></input>
+      <input value={url} style ={{marginTop:'20px',marginLeft:'10px',padding:'3px'}} onChange={e=>setUrl(e.target.value)} type='text' placeholder='enter url'></input>
+      {a?<p></p>:<p style={{color:"red" ,height:'1px'}}>link not available</p>}
       <br></br>
-      {a?<p></p>:<p style={{color:"red"}}>link not available</p>}
       <textarea value={savedtext}  onChange={subtext} style={{padding:'15px 10px',
-     height:'300px' ,width:'90%'}} placeholder="enter text" ></textarea>
+     height:'70vh' ,width:'90%'}} placeholder="enter text" ></textarea>
       <br></br>
       <input type="button" style={{margin:'20px'}} onClick={submittext} value="SUBMIT"></input>
       <input type="button" style={{margin:'20px'}} onClick={gettext} value="GET"></input>

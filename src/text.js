@@ -26,12 +26,12 @@ function back(){
 }
 
 return (
-    <div className="App">
+    <div style={{height:'100vh',backgroundColor:'antiquewhite'}} className="App">
       <center>
         <label>url:</label>
-      <input value={url} style ={{marginTop:'20px'}} type='text' placeholder='enter url' onChange={e=>setUrl(e.target.value)} ></input>
+      <input value={url} style ={{marginTop:'20px',marginLeft:'10px',padding:'3px'}} type='text' placeholder='enter url' onChange={e=>setUrl(e.target.value)} ></input>
       <br></br>
-      <textarea value={savedtext} style={{margin:'20px',height:'300px',width:'90%'}} onChange={e=>{setText({...text,savedtext:e.target.value})}} placeholder="enter text" height="90" width="90"></textarea>
+      <textarea value={savedtext} style={{margin:'20px',height:'70vh',width:'90%'}} onChange={e=>{setText({...text,savedtext:e.target.value})}} placeholder="enter text" height="90" width="90"></textarea>
       <br></br>
       <input type="button" style={{margin:'20px'}} onClick={submittext} value="SUBMIT"></input>
       <input type="button" style={{margin:'20px'}} onClick={back} value="Try other url"></input>
